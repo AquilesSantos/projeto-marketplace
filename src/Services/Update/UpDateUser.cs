@@ -36,7 +36,7 @@ namespace marketplace.src.Services.Update
         {
           searchResult = EditData(user);
 
-          if (Menu.resOptionMenu == 11)
+          if (Menu.resOptionMenu == 10)
           {
             Console.WriteLine("\nUsuário editado com sucesso!");
             Console.WriteLine(user.ToString());
