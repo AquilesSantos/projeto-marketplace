@@ -39,7 +39,7 @@ namespace marketplace.src.Services
     }
     public void DefaultMessage()
     {
-      Console.Write("Tecle qualquer botão para retornar ao menu: ");
+      Console.Write("Precione qualquer tecla para retornar ao menu: ");
       Console.ReadLine();
     }
     public void InvalidOption()
