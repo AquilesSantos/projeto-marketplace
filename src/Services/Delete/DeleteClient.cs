@@ -7,7 +7,7 @@ namespace marketplace.src.Services.Delete
 {
   public class DeleteClient
   {
-    public Client DelClient()
+    protected internal void DelClient()
     {
       Client client;
       Client searchResult = null;
@@ -15,7 +15,6 @@ namespace marketplace.src.Services.Delete
 
       if (clients.GetClientList().Count > 0)
       {
-
         Console.Write("Digite o id do cliente de deseja excluir: ");
         int clientId;
         while (!int.TryParse(Console.ReadLine(), out clientId))
@@ -28,7 +27,7 @@ namespace marketplace.src.Services.Delete
 
         if (client == null)
         {
-          Console.WriteLine("\nClientes não encontrado.\n");
+          Console.WriteLine("\nCliente não encontrado.\n");
           searchResult = null;
         }
         else
@@ -49,8 +48,6 @@ namespace marketplace.src.Services.Delete
       }
       else
         System.Console.WriteLine("\nNão há clientes cadastrados\n");
-
-      return searchResult;
     }
   }
 }

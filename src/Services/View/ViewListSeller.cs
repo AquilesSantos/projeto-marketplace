@@ -6,7 +6,7 @@ namespace marketplace.src.Services.Search
 {
   public class ViewListSeller
   {
-    public void Get()
+    protected internal void Get()
     {
       CreateSeller sellers = new CreateSeller();
       if (sellers.GetSellerList().Count > 0)

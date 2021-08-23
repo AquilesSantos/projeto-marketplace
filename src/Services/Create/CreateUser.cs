@@ -8,7 +8,7 @@ namespace marketplace.src.Services.Create
   public class CreateUser
   {
     static private List<User> userList = new List<User>();
-    internal User RegisterUser()
+    protected internal User RegisterUser()
     {
       Console.Write("\nNome: ");
       string name = Console.ReadLine();

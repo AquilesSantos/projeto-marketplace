@@ -6,7 +6,7 @@ namespace marketplace.src.Services.Update
 {
   public class UpDateSeller : UpDateUser
   {
-    public void PutSeller()
+    protected internal void PutSeller()
     {
       CreateSeller sellers = new CreateSeller();
       if (sellers.GetSellerList().Count > 0)

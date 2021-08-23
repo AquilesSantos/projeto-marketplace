@@ -7,7 +7,7 @@ namespace marketplace.src.Services.Update
 {
   public class UpDateUser
   {
-    public User Put()
+    protected internal User Put()
     {
       string type = "";
       User user;
@@ -78,7 +78,7 @@ namespace marketplace.src.Services.Update
 
       return searchResult;
     }
-    public User EditData(User user)
+    private User EditData(User user)
     {
       string res;
 

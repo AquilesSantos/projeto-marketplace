@@ -6,7 +6,7 @@ namespace marketplace.src.Services.Search
 {
   public class ViewUserList
   {
-    public void Get()
+    protected internal void Get()
     {
       CreateUser users = new CreateUser();
       if (users.GetUserList().Count > 0)

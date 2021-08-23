@@ -8,7 +8,7 @@ namespace marketplace.src.Services.Delete
 {
   public class DeleteUser
   {
-    public User DelUser()
+    protected internal void DelUser()
     {
       User user;
       User searchResult = null;
@@ -64,8 +64,6 @@ namespace marketplace.src.Services.Delete
       }
       else
         System.Console.WriteLine("\nNão há usuários cadastrados\n");
-
-      return searchResult;
     }
   }
 }

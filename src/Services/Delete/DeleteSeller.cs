@@ -8,7 +8,7 @@ namespace marketplace.src.Services.Delete
 {
   public class DeleteSeller
   {
-    public Seller DelSeller()
+   protected internal void DelSeller()
     {
       Seller seller;
       Seller searchResult = null;
@@ -50,8 +50,6 @@ namespace marketplace.src.Services.Delete
       }
       else
         System.Console.WriteLine("\nNão há vendedores cadastrados\n");
-
-      return searchResult;
     }
   }
 }

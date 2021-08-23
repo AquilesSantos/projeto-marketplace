@@ -6,7 +6,7 @@ namespace marketplace.src.Services.Search
 {
   public class ViewClientList
   {
-    public void Get()
+    protected internal void Get()
     {
       CreateClient clients = new CreateClient();
       if (clients.GetClientList().Count > 0)

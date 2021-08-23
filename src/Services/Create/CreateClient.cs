@@ -8,7 +8,7 @@ namespace marketplace.src.Services.Create
   public class CreateClient : CreateUser
   {
     static private List<Client> clientList = new List<Client>();
-    public void RegisterClient()
+    protected internal void RegisterClient()
     {
       if (GetUserList().Count > 0)
       {
