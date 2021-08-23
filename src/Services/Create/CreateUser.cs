@@ -12,7 +12,7 @@ namespace marketplace.src.Services.Create
     {
       Console.Write("\nNome: ");
       string name = Console.ReadLine();
-      while (!Regex.IsMatch(name, @"^[a-zA-Z]+$"))
+      while (!Regex.IsMatch(name, @"^[a-zA-Z ]+$"))
       {
         Console.WriteLine("Neste campo só permite letras.\n");
         Console.Write("Nome: ");
