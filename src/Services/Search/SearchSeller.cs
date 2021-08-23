@@ -7,7 +7,7 @@ namespace marketplace.src.Services.Search
 {
   public class SearchSeller
   {
-   protected internal string Get()
+    internal string Get()
     {
       CreateSeller sellers = new CreateSeller();
       string searchResult = "";

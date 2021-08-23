@@ -4,11 +4,11 @@ namespace marketplace.src.Entities
 {
   public class User
   {
-    public int _id { get; protected internal set; }
-    public string _name { get; protected internal set; }
-    public string _user { get; protected internal set; }
-    public string _password { get; protected internal set; }
-    public DateTime _birthDate { get; protected internal set; }
+    public int _id { get; internal set; }
+    public string _name { get; internal set; }
+    public string _user { get; internal set; }
+    public string _password { get; internal set; }
+    public DateTime _birthDate { get; internal set; }
 
     public User() { }
     public User(int id, string name, string user, string password, DateTime birthDate)

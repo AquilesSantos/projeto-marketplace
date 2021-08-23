@@ -8,7 +8,7 @@ namespace marketplace.src.Services.Delete
 {
   public class DeleteUser
   {
-    protected internal void DelUser()
+    internal void DelUser()
     {
       User user;
       User searchResult = null;

@@ -4,8 +4,8 @@ namespace marketplace.src.Entities
 {
   public class Client : User
   {
-    public Address _deliveryAddress { get; protected internal set; }
-    public Address _billingAddress { get; protected internal set; }
+    public Address _deliveryAddress { get; internal set; }
+    public Address _billingAddress { get; internal set; }
     public Client(
       int id, string name, string user, string password, DateTime birthDate, Address deliveryAddress, Address billingAddress) :
       base(id, name, user, password, birthDate)

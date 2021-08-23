@@ -7,7 +7,7 @@ namespace marketplace.src.Services.Delete
 {
   public class DeleteClient
   {
-    protected internal void DelClient()
+    internal void DelClient()
     {
       Client client;
       Client searchResult = null;

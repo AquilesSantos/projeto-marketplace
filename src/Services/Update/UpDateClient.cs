@@ -7,7 +7,7 @@ namespace marketplace.src.Services.Update
 {
   public class UpDateClient : UpDateUser
   {
-    protected internal void PutClient()
+    internal void PutClient()
     {
       CreateClient clients = new CreateClient();
 

@@ -7,7 +7,7 @@ namespace marketplace.src.Services.Update
 {
   public class UpDateUser
   {
-    protected internal User Put()
+    internal User Put()
     {
       string type = "";
       User user;
