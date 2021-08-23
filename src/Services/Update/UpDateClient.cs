@@ -15,29 +15,31 @@ namespace marketplace.src.Services.Update
       {
         User user = base.Put();
 
-        Client client = clients.GetClientList().FirstOrDefault(c => c._id == user._id);
-        Console.WriteLine(client.ToString());
+        if (user != null)
+        {
+          Client client = clients.GetClientList().FirstOrDefault(c => c._id == user._id);
+          Console.WriteLine(client.ToString());
 
-        string res;
+          string res;
 
-        Console.Write("\nGostaria de editar o endereço de entrega (S/N)? ");
-        res = Console.ReadLine();
+          Console.Write("Gostaria de editar o endereço de entrega (S/N)? ");
+          res = Console.ReadLine();
 
-        if (res.ToLower() == "s")
-          client._deliveryAddress = RegisterAdress("delivery", client._deliveryAddress);
+          if (res.ToLower() == "s")
+            client._deliveryAddress = RegisterAdress("delivery", client._deliveryAddress);
 
-        Console.Write("\nGostaria de editar o endereço de cobrança (S/N)? ");
-        res = Console.ReadLine();
+          Console.Write("\nGostaria de editar o endereço de cobrança (S/N)? ");
+          res = Console.ReadLine();
 
-        if (res.ToLower() == "s")
-          client._billingAddress = RegisterAdress("billing", client._billingAddress);
+          if (res.ToLower() == "s")
+            client._billingAddress = RegisterAdress("billing", client._billingAddress);
 
-        Console.WriteLine("\nCliente editado com sucesso!");
-        Console.WriteLine(client.ToString());
+          Console.WriteLine("\nCliente editado com sucesso!");
+          Console.WriteLine(client.ToString());
+        }
       }
       else
         Console.WriteLine("\nNão há clientes cadastrados.\n");
-
     }
     private Address RegisterAdress(string type, Address address)
     {

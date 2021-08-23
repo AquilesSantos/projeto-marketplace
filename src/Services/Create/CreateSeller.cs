@@ -24,6 +24,7 @@ namespace marketplace.src.Services.Create
 
         if (user != null)
         {
+          Console.WriteLine(user.ToString());
           Seller seller = new Seller(user._id, user._name, user._user, user._password, user._birthDate);
           sellerList.Add(seller);
 

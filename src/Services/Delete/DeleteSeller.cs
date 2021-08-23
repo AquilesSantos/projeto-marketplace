@@ -29,15 +29,23 @@ namespace marketplace.src.Services.Delete
 
         if (seller == null)
         {
-          Console.WriteLine("\nvendedors não encontrado.\n");
+          Console.WriteLine("\nvendedor não encontrado.\n");
           searchResult = null;
         }
         else
         {
-          sellers.GetSellerList().Remove(seller);
+          Console.WriteLine(seller.ToString());
+          Console.Write("Tem certeza que deseja deletar este vendedor: (S/N)? ");
 
-          Console.WriteLine("\nvendedor deletado com sucesso!\n");
-          searchResult = seller;
+          string res = Console.ReadLine();
+          if (res.ToLower() == "s")
+          {
+            sellers.GetSellerList().Remove(seller);
+
+            Console.WriteLine("\nvendedor deletado com sucesso!");
+            searchResult = seller;
+          }
+          Console.WriteLine("");
         }
       }
       else

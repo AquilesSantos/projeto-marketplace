@@ -33,10 +33,18 @@ namespace marketplace.src.Services.Delete
         }
         else
         {
-          clients.GetClientList().Remove(client);
+          Console.WriteLine(client.ToString());
+          Console.Write("Tem certeza que deseja deletar este cliente: (S/N)? ");
 
-          Console.WriteLine("\nCliente deletado com sucesso!\n");
-          searchResult = client;
+          string res = Console.ReadLine();
+          if (res.ToLower() == "s")
+          {
+            clients.GetClientList().Remove(client);
+
+            Console.WriteLine("\nCliente deletado com sucesso!");
+            searchResult = client;
+          }
+          Console.WriteLine("");
         }
       }
       else

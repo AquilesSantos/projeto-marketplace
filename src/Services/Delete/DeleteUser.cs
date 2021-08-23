@@ -35,23 +35,31 @@ namespace marketplace.src.Services.Delete
         }
         else
         {
-          users.GetUserList().Remove(user);
+          Console.WriteLine(user.ToString());
+          Console.Write("Tem certeza que deseja deletar este usuário: (S/N)? ");
 
-          Console.WriteLine("\nUsuário deletado com sucesso!\n");
-          searchResult = user;
+          string res = Console.ReadLine();
+          if (res.ToLower() == "s")
+          {
+            users.GetUserList().Remove(user);
 
-          if (clients.GetClientList().Count > 0)
-          {
-            Client client = clients.GetClientList().FirstOrDefault(c => c._id == userId);
-            if (client != null)
-              clients.GetClientList().Remove(client);
+            Console.WriteLine("\nUsuário deletado com sucesso!");
+            searchResult = user;
+
+            if (clients.GetClientList().Count > 0)
+            {
+              Client client = clients.GetClientList().FirstOrDefault(c => c._id == userId);
+              if (client != null)
+                clients.GetClientList().Remove(client);
+            }
+            if (sellers.GetSellerList().Count > 0)
+            {
+              Seller seller = sellers.GetSellerList().FirstOrDefault(s => s._id == userId);
+              if (seller != null)
+                sellers.GetSellerList().Remove(seller);
+            }
           }
-          if (sellers.GetSellerList().Count > 0)
-          {
-            Seller seller = sellers.GetSellerList().FirstOrDefault(s => s._id == userId);
-            if (seller != null)
-              sellers.GetSellerList().Remove(seller);
-          }
+          Console.WriteLine("");
         }
       }
       else

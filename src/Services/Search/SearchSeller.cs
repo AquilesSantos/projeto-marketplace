@@ -25,7 +25,7 @@ namespace marketplace.src.Services.Search
         User seller = sellers.GetSellerList().FirstOrDefault(s => s._id == sellerId);
 
         if (seller == null)
-          searchResult = "\nVendedor não encontrato";
+          searchResult = "\nVendedor não encontrato\n";
         else
           searchResult = seller.ToString();
       }

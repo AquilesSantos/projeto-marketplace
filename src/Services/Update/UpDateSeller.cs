@@ -1,4 +1,5 @@
 using System;
+using marketplace.src.Entities;
 using marketplace.src.Services.Create;
 
 namespace marketplace.src.Services.Update
@@ -10,9 +11,12 @@ namespace marketplace.src.Services.Update
       CreateSeller sellers = new CreateSeller();
       if (sellers.GetSellerList().Count > 0)
       {
-        base.Put();
-        Console.WriteLine("\nVendedor editado com sucesso\n");
-
+        User user = base.Put();
+        if (user != null)
+        {
+          Console.WriteLine($"\nvendedor editado com sucesso!");
+          Console.WriteLine(user.ToString());
+        }
       }
       else
         Console.WriteLine("\nNão há vendedores cadastrados\n");

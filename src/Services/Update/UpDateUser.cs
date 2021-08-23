@@ -9,15 +9,23 @@ namespace marketplace.src.Services.Update
   {
     public User Put()
     {
+      string type = "";
       User user;
       User searchResult = null;
       CreateUser users = new CreateUser();
       CreateClient clients = new CreateClient();
       CreateSeller sellers = new CreateSeller();
 
+      if (Menu.resOptionMenu == 10)
+        type = "usuário";
+      if (Menu.resOptionMenu == 11)
+        type = "vendedor";
+      if (Menu.resOptionMenu == 12)
+        type = "cliente";
+
       if (users.GetUserList().Count > 0)
       {
-        Console.Write("Digite o id do usuário que deseja editar: ");
+        Console.Write($"Digite o id do { type } que deseja editar: ");
         int userId;
         while (!int.TryParse(Console.ReadLine(), out userId))
         {
@@ -29,11 +37,12 @@ namespace marketplace.src.Services.Update
 
         if (user == null)
         {
+          Console.WriteLine($"\n{type} não encontrado\n");
           searchResult = null;
-          Console.WriteLine("\nUsuário não encontrado\n");
         }
         else
         {
+          Console.WriteLine(user.ToString());
           searchResult = EditData(user);
 
           if (Menu.resOptionMenu == 10)
